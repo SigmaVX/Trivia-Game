@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- Bootsrap CSS & jQuery CDN Links -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <!-- CSS & Font Files -->
+    
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+
+
+</head>
+<body>
+
+    <!-- Start Screen -->
+    <div id="startScreen">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h1>Trivia King</h1>
+                    <div class="btn">Play Game</div><br>
+                    <div class="btn">Instructions</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question Screen -->
+    <div id="questionScreen">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    00:00
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12" id="questionBox">
+                    Question Goes Here
+                </div>
+            </div>
+            <div class="row justify-content-around">
+                <div class="btn col-12 col-md-5" id="answerOne">
+                    Answer One
+                </div>
+                <div class="btn col-12 col-md-5" id="answerTwo">
+                    Answer Two
+                </div>
+                <div class="btn col-12 col-md-5" id="answerFour">
+                    Answer Three
+                    </div>
+                <div class="btn col-12 col-md-5" id="answerFour">
+                    Answer Four
+                </div>
+            </div> 
+        </div>
+    </div>
+    
+    <!-- Transition Screen -->
+    <div id="resultsScreen">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-12" id="resultsMessage">
+                        Results Message
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-12" id="correctMessage">
+                        Correct Message
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-12" id="countDown">
+                        Next Question Countdown
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+    <!-- Bootstrap CDN & JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
+    <script src="./assets/javascript/app.js"></script>
+
+</body>
+</html>
