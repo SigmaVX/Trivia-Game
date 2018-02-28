@@ -22,12 +22,16 @@
     <!-- Score Header -->
     <div id="scoreArea">
         <div class="container">
-            <div class="row text-center">
-                <span class="col-6 icons">
+            <div class="row justify-content-around  ">
+                <span class="col-3 icons text-center">
                     <i class="fab fa-jenkins"></i>
                     Correct: <span id="correctCount">0</span>
                 </span>
-                <span class="col-6 icons">
+                <span class="col-3 icons text-center">
+                    <i class="fab fa-jenkins"></i>
+                    Questions Remaining: <span id="questionsLeft">0</span>
+                </span>
+                <span class="col-3 icons text-center">
                     <i class="fab fa-jenkins"></i>
                     Wrong: <span id="wrongCount">0</span>
                 </span> 
@@ -63,16 +67,16 @@
                 </div>
             </div>
             <div class="row justify-content-around">
-                <div class="btn answerBtn col-12 col-md-5" id="answerOne">
+                <div class="btn answerBtn col-12 col-md-5" id="1">
                     Answer One
                 </div>
-                <div class="btn answerBtn col-12 col-md-5" id="answerTwo">
+                <div class="btn answerBtn col-12 col-md-5" id="2">
                     Answer Two
                 </div>
-                <div class="btn answerBtn col-12 col-md-5" id="answerThree">
+                <div class="btn answerBtn col-12 col-md-5" id="3">
                     Answer Three
                     </div>
-                <div class="btn answerBtn col-12 col-md-5" id="answerFour   ">
+                <div class="btn answerBtn col-12 col-md-5" id="4">
                     Answer Four
                 </div>
             </div> 
@@ -95,22 +99,20 @@
                     Fact About Answer
                 </p>
             </div>
-            <div class="row text-center">
-                <div class="col-12" id="countDownHeader">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center" id="countDownHeader">
                     Next Question In
                 </div>
-                <div class="col-12" id="countDown">
+                <div class="col-12 text-center" id="countDown">
                     10
                 </div>
-                <div class="btn col-12 col-md-6" id="playAgain">
+                <div class="btn" id="playAgain">
                     Play Again?
                 </div>
             </div>
         </div>
     </div>
-
     
-
     <!-- Bootstrap CDN & JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
     <script src="./assets/javascript/app.js"></script>

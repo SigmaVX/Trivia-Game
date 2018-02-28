@@ -1,10 +1,9 @@
 $( document ).ready(function(){
 
 // Hides Screens Until Ready
-$("#questionScreen").hide();
-$("#resultsScreen").hide();
+// $("#questionScreen").hide();
+// $("#resultsScreen").hide();
      
-
 // Create Array Of Objects For Questions
 var questions = [
    
@@ -113,6 +112,7 @@ var transitionTime = 10;
 
 // Number Of Questions Asked
 var questionCount = 0;
+var questionsRemaining = 10; 
 
 // Sets Countdown For Transition Timer
 var transInterval;
@@ -129,6 +129,7 @@ var guessTimeout;
 // Sets The Timeout Delay For Transition
 var transTimeout;
 
+// =============================================================
 
 // Function - Starts The Game
 function startGame(){
@@ -136,13 +137,15 @@ function startGame(){
     correctCount = 0;
     wrongCount = 0;
     questionCount=0; 
+    questionsRemaining = 10;
     clearInterval(transInterval);
     clearInterval(guessInterval);
     clearTimeout(guessTimeout);
     nextQuestion();
     $("#correctCount").text(correctCount);
     $("#wrongCount").text(wrongCount);
-    $("#playAgain").hide();
+    $("#questionsLeft").text(questionsRemaining);
+    // $("#playAgain").hide();
 }
 
 // Function - Advances To Another Question
@@ -164,7 +167,6 @@ function nextQuestion(){
     guessTimer();
 }
 
-
 // Function - Randomly Picks Question Array Spot & Verifies Only Asked Once
 function pickQuestion() {
     pick = Math.floor(Math.random() * 10);
@@ -184,11 +186,11 @@ function pickQuestion() {
     return questionSelected;
 }
 
-
 // Function - Randomly Shuffles Answers 
 function answerShuffle() {
     answerPositions = [];
     for (var i = 0; i < 4; i++){
+        
         // Note: Array spots are between 1 and 4 since spot one on object is the question
         answerSpot = Math.ceil(Math.random() * 4);
         if (answerPositions.indexOf(answerSpot) > -1){
@@ -199,31 +201,36 @@ function answerShuffle() {
         }
         answerPositions.push(answerSpot);
         console.log("Answer Spot Picked: " + answerSpot);
-        
     }
     
     console.log("Answer Positions Array: " + answerPositions);
     
     // Assigns The Question To The HTML and Check Attribute
-    $("#answerOne").text(questionSelected.rightAnswer);
-    $("#answerOne").attr("check", "right");
-    $("#answerTwo").text(questionSelected.wrongAnswerOne);
-    $("#answerTwo").attr("check", "wrong");
-    $("#answerThree").text(questionSelected.wrongAnswerTwo);
-    $("#answerThree").attr("check", "wrong");
-    $("#answerFour").text(questionSelected.wrongAnswerThree);
-    $("#answerFour").attr("check", "wrong");
-}
+    $("#1").text(questionSelected.rightAnswer);
+    $("#1").attr("check", "right");
+    $("#2").text(questionSelected.wrongAnswerOne);
+    $("#2").attr("check", "wrong");
+    $("#3").text(questionSelected.wrongAnswerTwo);
+    $("#3").attr("check", "wrong");
+    $("#4").text(questionSelected.wrongAnswerThree);
+    $("#4").attr("check", "wrong");
 
+    // Good Example
+    // $('#' + answerPosition[0]).text("test place");
+    // console.log('"#' + answerPosition[0] +'"');
+}
 
 // Function - Checks Guess
 function checkAnswer(){
     $("#startScreen").hide();
     $("#resultsScreen").show();
     $("#questionScreen").hide();
+    questionsRemaining--;
+    console.log("Questions Remaining: " + questionsRemaining);
+    $("#questionsLeft").text(questionsRemaining);
     
     // Game End Check
-    if(questionCount === 10){
+    if(questionsRemaining === 0){
         $("#correctCount").text(correctCount);
         $("#resultsMessage").text("Correct!");
         $("#correctMessage").text("The Right Answer Was: " + questionSelected.rightAnswer);
@@ -233,6 +240,7 @@ function checkAnswer(){
     }
 
     else{
+       
         // Resets The Guess Timer So Its Ready When Called Next
         clearInterval(guessInterval);
         clearTimeout(guessTimeout);
@@ -253,7 +261,6 @@ function checkAnswer(){
             $("#resultsMessage").text("Correct!");
             $("#correctMessage").text("The Right Answer Was: " + questionSelected.rightAnswer);
             $("#fact").text(questionSelected.fact);
-
         }
         
         else {
@@ -265,7 +272,6 @@ function checkAnswer(){
         }
     }
 }
-
 
 // Function - Sets The Transition Timer When Called
 function transTimer(){
@@ -287,7 +293,6 @@ function transTimer(){
         $("#countDown").text(transitionTime);
     }
 }
-  
 
 // Function - Sets The Guess Timer When Called
 function guessTimer(){
@@ -297,7 +302,6 @@ function guessTimer(){
     clearTimeout(guessTimeout);
     guessTime = 30;
     $("#guessTimer").text(guessTime);
-    
     
     // Sets Countdown Timer Using The Nested Fuction Below
     guessInterval = setInterval(function(){guessTimer()}, 1000);
@@ -339,7 +343,4 @@ $(".answerBtn").on("click", checkAnswer);
 // Functions
 // Check Answer - add object key to each div via property value and look for if button val === object 
  
-
-
-
 });
