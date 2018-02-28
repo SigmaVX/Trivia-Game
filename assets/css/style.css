@@ -1,3 +1,11 @@
 .btn {
     border: 2px solid black;
 }
+
+#resultsScreen, #startScreen, #questionScreen{
+    min-height: 100vh;
+} 
+
+.icons {
+    font-size: 20px;
+}

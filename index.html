@@ -12,14 +12,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
-    <!-- CSS & Font Files -->
-    
+    <!-- CSS & Font Files --> 
     <link rel="stylesheet" href="./assets/css/style.css">
 
 
 
 </head>
 <body>
+    <!-- Score Header -->
+    <div id="scoreArea">
+        <div class="container">
+            <div class="row text-center">
+                <span class="col-6 icons">
+                    <i class="fab fa-jenkins"></i>
+                    Correct: <span id="correctCount">0</span>
+                </span>
+                <span class="col-6 icons">
+                    <i class="fab fa-jenkins"></i>
+                    Wrong: <span id="wrongCount">0</span>
+                </span> 
+            </div>
+        </div>
+    </div>
+
 
     <!-- Start Screen -->
     <div id="startScreen">
@@ -27,8 +42,8 @@
             <div class="row text-center">
                 <div class="col-12">
                     <h1>Trivia King</h1>
-                    <div class="btn">Play Game</div><br>
-                    <div class="btn">Instructions</div>
+                    <div class="btn" id="playButton">Play Game</div><br>
+                    <div class="btn" id="instructions">Instructions</div>
                 </div>
             </div>
         </div>
@@ -48,16 +63,16 @@
                 </div>
             </div>
             <div class="row justify-content-around">
-                <div class="btn col-12 col-md-5" id="answerOne">
+                <div class="btn answerBtn col-12 col-md-5" id="answerOne">
                     Answer One
                 </div>
-                <div class="btn col-12 col-md-5" id="answerTwo">
+                <div class="btn answerBtn col-12 col-md-5" id="answerTwo">
                     Answer Two
                 </div>
-                <div class="btn col-12 col-md-5" id="answerFour">
+                <div class="btn answerBtn col-12 col-md-5" id="answerThree">
                     Answer Three
                     </div>
-                <div class="btn col-12 col-md-5" id="answerFour">
+                <div class="btn answerBtn col-12 col-md-5" id="answerFour   ">
                     Answer Four
                 </div>
             </div> 
@@ -66,24 +81,27 @@
     
     <!-- Transition Screen -->
     <div id="resultsScreen">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-12" id="resultsMessage">
-                        Results Message
-                    </div>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12" id="resultsMessage">
+                    Results Message
                 </div>
-                <div class="row text-center">
-                    <div class="col-12" id="correctMessage">
-                        Correct Message
-                    </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12" id="correctMessage">
+                    Correct Message
                 </div>
-                <div class="row text-center">
-                    <div class="col-12" id="countDown">
-                        Next Question Countdown
-                    </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12" id="countDownHeader">
+                    Next Question In
+                </div>
+                <div class="col-12" id="countDown">
+                    00
                 </div>
             </div>
         </div>
+    </div>
 
     
 
