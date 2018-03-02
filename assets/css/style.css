@@ -1,11 +1,120 @@
+
+h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 10px;
+    text-shadow: -1px 0 #F8FFE5, 0 1px #F8FFE5, 1px 0 #F8FFE5, 0 -1px #F8FFE5;
+}
+
 .btn {
-    border: 2px solid black;
+    border: 2px solid #000000;
+    background-color: #06D6A0;
+    width: 300px;
+    margin-bottom: 20px;
+    color: #151E3F;
+    font-weight: 700;
+}
+
+#countDown{
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 10px;
+    text-shadow: -1px 0 #F8FFE5, 0 1px #F8FFE5, 1px 0 #F8FFE5, 0 -1px #F8FFE5;
+}
+
+#correctMessage {
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#guessTimer{
+    font-size: 70px;
+    margin-bottom: 20px;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 10px;
+    text-shadow: -1px 0 #F8FFE5, 0 1px #F8FFE5, 1px 0 #F8FFE5, 0 -1px #F8FFE5;
+}
+
+#questionBox{
+    background-color: #F8FFE5;
+    color: #151E3F;
+    opacity: .9;
+    font-size: 30px;
+    font-weight: 600;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+#resultsMessage {
+    margin-top: 10px;
 }
 
 #resultsScreen, #startScreen, #questionScreen{
     min-height: 100vh;
 } 
 
+#resultsMessage, #correctMessage {
+    color: #151E3F;
+    font-size: 25px;
+    text-transform: capitalize;
+}
+
+#fact{
+    color: #151E3F;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+#transBox{
+    background-color: #F8FFE5;
+    color: #151E3F;
+    border-radius: 10px;
+    opacity: .95;
+    border: 2px solid #151E3F;
+}
+
+#scoreArea {
+    margin-bottom: 10%;
+}
+
 .icons {
     font-size: 20px;
+    color: #151E3F;
 }
+
+
+/* CSS For Background Video */
+.videoHolder {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video {
+      height: 300%;
+      top: -100%;
+    }
+  }
+  
+  @media (max-aspect-ratio: 16/9) {
+    .video {
+      width: 300%;
+      left: -100%;
+    }
+  }

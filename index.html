@@ -13,41 +13,50 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
     <!-- CSS & Font Files --> 
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 
-
-
 </head>
+
 <body>
+    
+    <!-- Backgroud Video -->
+    <div class="videoHolder">
+        <video loop muted autoplay poster="#" class="video">
+            <source src="./assets/images/cupheadsmall.mp4" type="video/mp4">
+        </video>
+    </div>
+
+
     <!-- Score Header -->
     <div id="scoreArea">
         <div class="container">
             <div class="row justify-content-around  ">
-                <span class="col-3 icons text-center">
-                    <i class="fab fa-jenkins"></i>
+                <span class="col-4 icons text-center">
+                    <i class="fas fa-smile"></i>
                     Correct: <span id="correctCount">0</span>
                 </span>
-                <span class="col-3 icons text-center">
-                    <i class="fab fa-jenkins"></i>
+                <span class="col-4 icons text-center">
+                    <i class="fas fa-sync-alt"></i>
                     Questions Remaining: <span id="questionsLeft">0</span>
                 </span>
-                <span class="col-3 icons text-center">
-                    <i class="fab fa-jenkins"></i>
+                <span class="col-4 icons text-center">
+                    <i class="fas fa-frown"></i>
                     Wrong: <span id="wrongCount">0</span>
                 </span> 
             </div>
         </div>
     </div>
 
-
     <!-- Start Screen -->
     <div id="startScreen">
         <div class="container">
             <div class="row text-center">
                 <div class="col-12">
-                    <h1>Trivia King</h1>
+                    <h1>Toon<br>Trivia King</h1>
                     <div class="btn" id="playButton">Play Game</div><br>
-                    <div class="btn" id="instructions">Instructions</div>
+                    <!-- <div class="btn" id="instructions">Instructions</div> -->
                 </div>
             </div>
         </div>
@@ -85,7 +94,7 @@
     
     <!-- Transition Screen -->
     <div id="resultsScreen">
-        <div class="container">
+        <div class="container" id="transBox">
             <div class="row text-center">
                 <div class="col-12" id="resultsMessage">
                     Results Message
@@ -113,6 +122,18 @@
         </div>
     </div>
     
+    <!--Footer Section-->
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 pt-4 pb-3 text-center">
+                    <p><strong>© Copyright 2018 Tony Wible</strong></p>
+                    <p>Cuphead video is the property of StudioMDHR and is not affiliated with this educational site.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- Bootstrap CDN & JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
     <script src="./assets/javascript/app.js"></script>
